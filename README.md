@@ -11,29 +11,30 @@ Re-Tale can help retailers by providing multiple services in one place, streamli
 
 **************************************************************************
 PROJECT FEATURES:
->Form
-
-  1. A login and logout feature
-
 >Customer details
 
-  2. A search feature
-  3. A name input feature
-  4. A contact input feature
+  2. Add customer
+  3. List all customers 
+     
      
 >Products
 
-  5. An add product to cart feature
-  6. A remove feature
-  7. A clear feature
+  5. Add products
+  6. List all products
      
->Bill Options
+>Orders
 
-   8. An exit feature
-   9. A total feature
-   10. A generate bill feature
-  
->Update Employee
+   8. Add a new order for a customer
+   9. List all orders
 
-   11. Update product feature
-  12. Delete Product feature
+****************************************************************************
+PROJECT USER STORIES:
+> As a user you should be able to:
+
+  1. Add a new customer
+  2. Add a new product
+  3. Add a new order for a customer
+  4. List all customers
+  5. List all products
+  6. List all orders.
+
