@@ -1,4 +1,4 @@
-from sqlalchemy import Table, Column, Integer,DATETIME, PrimaryKeyConstraint, VARCHAR, ForeignKey, create_engine
+from sqlalchemy import Column, Integer,Date, VARCHAR, ForeignKey, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 
@@ -14,13 +14,13 @@ class Customer(Base):
     contact = Column(Integer)
 
 class Product(Base):
-    __table__ = 'products'
+    __tablename__ = 'products'
     id = Column(Integer, primary_key=True)
     name = Column(VARCHAR)
     category = Column(VARCHAR)
     sub_category = Column(VARCHAR)
     price = Column(Integer)
-    Expiry_date = Column(DATETIME)
+    Expiry_date = Column(Date)
 
 class Order(Base):
     __tablename__ = 'orders'
