@@ -1,6 +1,9 @@
 from retail import Customer,Product, Orders, order_items, session
 
 session.query(Customer).delete()
+session.query(Product).delete()
+session.query(Orders).delete()
+session.query(order_items).delete()
 
 session.commit()
 cust_data = [{
@@ -417,3 +420,4 @@ for datum in product_data:
 
 session.add_all(products)
 session.commit()
+
