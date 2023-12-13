@@ -26,6 +26,8 @@ class Order(Base):
     __tablename__ = 'orders'
     id = Column(Integer, primary_key=True)
     customer_id = Column(Integer, ForeignKey('customers.id'))
+    order_date = Column(Date)
+    total = Column(Integer)
     customer = relationship("Customer", back_populates="orders")
 
 class OrderItem(Base):

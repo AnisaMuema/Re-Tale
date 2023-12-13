@@ -1,12 +1,13 @@
-from retail import Customer,Product, session
+from retail import Customer,Product,Order, session
 from datetime import datetime
 
 session.query(Customer).delete()
 session.query(Product).delete()
-# session.query(Orders).delete()
+session.query(Order).delete()
 # session.query(order_items).delete()
 
 session.commit()
+
 cust_data = [{
   "id": 1,
   "first_name": "Christoforo",
@@ -350,6 +351,65 @@ for datum in product_data:
     products.append(prod)
 
 session.add_all(products)
+session.commit()
+
+print("Done seeding data")
+
+
+order_data = [{
+  "id": 1,
+  "customer_id": 4,
+  "order_date": datetime.strptime("5/19/2023", "%m/%d/%Y").date(),
+  "total": 5
+}, {
+  "id": 2,
+  "customer_id": 2,
+  "order_date": datetime.strptime("9/23/2023", "%m/%d/%Y").date(),
+  "total": 2
+}, {
+  "id": 3,
+  "customer_id": 3,
+  "order_date": datetime.strptime("8/2/2023", "%m/%d/%Y").date(),
+  "total": 200
+}, {
+  "id": 4,
+  "customer_id": 13,
+  "order_date": datetime.strptime("6/22/2023", "%m/%d/%Y").date(),
+  "total": 49
+}, {
+  "id": 5,
+  "customer_id": 18,
+  "order_date": datetime.strptime("12/19/2022", "%m/%d/%Y").date(),
+  "total": 12
+}, {
+  "id": 6,
+  "customer_id": 30,
+  "order_date": datetime.strptime("1/20/2023", "%m/%d/%Y").date(),
+  "total": 2
+}, {
+  "id": 7,
+  "customer_id": 4,
+  "order_date": datetime.strptime("4/23/2023", "%m/%d/%Y").date(),
+  "total": 192
+}, {
+  "id": 8,
+  "customer_id": 8,
+  "order_date": datetime.strptime("10/17/2023","%m/%d/%Y").date(),
+  "total": 15
+}, {
+  "id": 9,
+  "customer_id": 19,
+  "order_date": datetime.strptime("6/8/2023", "%m/%d/%Y").date(),
+  "total": 10
+}]
+
+orders = []
+
+for datum in order_data:
+    order = Order(**datum)
+    orders.append(order)
+
+session.add_all(orders)
 session.commit()
 
 print("Done seeding data")
