@@ -64,7 +64,18 @@ def all_products():
     for product in products:
         print(product.id, product.name, product.category)
 
-if __name__ == '__main__':
+click.command()
+def all_orders():
+    orders = session.query(Order).all()
+    for order in orders:
+        print(order.id, order.customer_id, order.order_date,order.total)
+
+
+
+# if __name__ == '__main__':
+exit = False 
+while exit == False:
+
     click.secho("*******************RE-TALE*******************", fg='green')
     click.secho("What would you like to do?", fg='red')
     click.secho("................................................")
@@ -74,6 +85,7 @@ if __name__ == '__main__':
     click.secho("4. List all customers", fg='magenta')
     click.secho("5. List all products", fg='magenta')
     click.secho("6. List all order", fg='magenta')
+    click.secho("7. Exit", fg='magenta')
     
 
     option = click.prompt(">", type=int)
@@ -87,3 +99,12 @@ if __name__ == '__main__':
         all_customers() 
     elif option == 5:
         all_products()
+    elif option == 6:
+        all_orders()
+
+    elif option == 7:
+        break
+    
+    else:
+        click.prompt("Invalid option")
+

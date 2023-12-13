@@ -1,10 +1,10 @@
-from retail import Customer,Product,Order, session
+from retail import Customer,Product,Order, OrderItem, session
 from datetime import datetime
 
 session.query(Customer).delete()
 session.query(Product).delete()
 session.query(Order).delete()
-# session.query(order_items).delete()
+session.query(OrderItem).delete()
 
 session.commit()
 
@@ -410,6 +410,119 @@ for datum in order_data:
     orders.append(order)
 
 session.add_all(orders)
+session.commit()
+
+print("Done seeding data")
+
+order_item_data = [{
+  "id": 1,
+  "order_id": 1,
+  "product_id": 1,
+  "quantity": 1
+}, {
+  "id": 2,
+  "order_id": 2,
+  "product_id": 2,
+  "quantity": 2
+}, {
+  "id": 3,
+  "order_id": 3,
+  "product_id": 3,
+  "quantity": 3
+}, {
+  "id": 4,
+  "order_id": 4,
+  "product_id": 4,
+  "quantity": 4
+}, {
+  "id": 5,
+  "order_id": 5,
+  "product_id": 5,
+  "quantity": 5
+}, {
+  "id": 6,
+  "order_id": 6,
+  "product_id": 6,
+  "quantity": 6
+}, {
+  "id": 7,
+  "order_id": 7,
+  "product_id": 7,
+  "quantity": 7
+}, {
+  "id": 8,
+  "order_id": 8,
+  "product_id": 8,
+  "quantity": 8
+}, {
+  "id": 9,
+  "order_id": 9,
+  "product_id": 9,
+  "quantity": 9
+}, {
+  "id": 10,
+  "order_id": 10,
+  "product_id": 10,
+  "quantity": 10
+}, {
+  "id": 11,
+  "order_id": 11,
+  "product_id": 11,
+  "quantity": 11
+}, {
+  "id": 12,
+  "order_id": 12,
+  "product_id": 12,
+  "quantity": 12
+}, {
+  "id": 13,
+  "order_id": 13,
+  "product_id": 13,
+  "quantity": 13
+}, {
+  "id": 14,
+  "order_id": 14,
+  "product_id": 14,
+  "quantity": 14
+}, {
+  "id": 15,
+  "order_id": 15,
+  "product_id": 15,
+  "quantity": 15
+}, {
+  "id": 16,
+  "order_id": 16,
+  "product_id": 16,
+  "quantity": 16
+}, {
+  "id": 17,
+  "order_id": 17,
+  "product_id": 17,
+  "quantity": 17
+}, {
+  "id": 18,
+  "order_id": 18,
+  "product_id": 18,
+  "quantity": 18
+}, {
+  "id": 19,
+  "order_id": 19,
+  "product_id": 19,
+  "quantity": 19
+}, {
+  "id": 20,
+  "order_id": 20,
+  "product_id": 20,
+  "quantity": 20
+}]
+
+ordersItems = []
+
+for datum in order_item_data:
+    item = OrderItem(**datum)
+    ordersItems.append(item)
+
+session.add_all(ordersItems)
 session.commit()
 
 print("Done seeding data")
