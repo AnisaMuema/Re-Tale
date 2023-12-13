@@ -35,8 +35,9 @@ def add_product():
 @click.command()
 def add_order():
     click.echo("Adding order...")
-    customer_id = click.prompt('Enter customer id who places the order')
+    customer_id = click.prompt('Enter customer ID who placed the order')
     order_date = click.prompt('Enter date of order')
+    order_date = datetime.strptime(order_date, "%m/%d/%Y")
     total = click.prompt('Enter total amount of orders')
     click.echo(f'{customer_id}, {order_date}, {total}')
 
@@ -72,39 +73,39 @@ def all_orders():
 
 
 
-# if __name__ == '__main__':
-exit = False 
-while exit == False:
+if __name__ == '__main__':
+    exit = False 
+    while exit == False:
 
-    click.secho("*******************RE-TALE*******************", fg='green')
-    click.secho("What would you like to do?", fg='red')
-    click.secho("................................................")
-    click.secho("1. Add a new customer", fg='magenta')
-    click.secho("2. Add a new product", fg='magenta')
-    click.secho("3. Add a new order for a customer", fg='magenta')
-    click.secho("4. List all customers", fg='magenta')
-    click.secho("5. List all products", fg='magenta')
-    click.secho("6. List all order", fg='magenta')
-    click.secho("7. Exit", fg='magenta')
-    
+        click.secho("*******************RE-TALE*******************", fg='green')
+        click.secho("What would you like to do?", fg='red')
+        click.secho("................................................")
+        click.secho("1. Add a new customer", fg='magenta')
+        click.secho("2. Add a new product", fg='magenta')
+        click.secho("3. Add a new order for a customer", fg='magenta')
+        click.secho("4. List all customers", fg='magenta')
+        click.secho("5. List all products", fg='magenta')
+        click.secho("6. List all order", fg='magenta')
+        click.secho("7. Exit", fg='magenta')
+        
 
-    option = click.prompt(">", type=int)
-    if option == 1:
-        customer_input()
-    elif option == 2:
-        add_product()  
-    elif option == 3:
-        add_order()  
-    elif option == 4:
-        all_customers() 
-    elif option == 5:
-        all_products()
-    elif option == 6:
-        all_orders()
+        option = click.prompt(">", type=int)
+        if option == 1:
+            customer_input()
+        elif option == 2:
+            add_product()  
+        elif option == 3:
+            add_order()  
+        elif option == 4:
+            all_customers() 
+        elif option == 5:
+            all_products()
+        elif option == 6:
+            all_orders()
 
-    elif option == 7:
-        break
-    
-    else:
-        click.prompt("Invalid option")
+        elif option == 7:
+            break
+        
+        else:
+            click.prompt("Invalid option")
 
