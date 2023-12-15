@@ -12,7 +12,7 @@ Re-Tale can help retailers by providing multiple services in one place, streamli
 **************************************************************************
 PROJECT FEATURES:
 1. An add feature
-2. ist feature
+2. List feature
 3. Update database feature
 
 ****************************************************************************
