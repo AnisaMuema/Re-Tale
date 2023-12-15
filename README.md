@@ -11,21 +11,9 @@ Re-Tale can help retailers by providing multiple services in one place, streamli
 
 **************************************************************************
 PROJECT FEATURES:
->Customer details
-
-  2. Add customer
-  3. List all customers 
-     
-     
->Products
-
-  5. Add products
-  6. List all products
-     
->Orders
-
-   8. Add a new order for a customer
-   9. List all orders
+1. An add feature
+2. ist feature
+3. Update database feature
 
 ****************************************************************************
 PROJECT USER STORIES:
